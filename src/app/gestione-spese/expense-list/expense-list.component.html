@@ -1,0 +1,10 @@
+<h2>Lista delle Spese</h2>
+<ul style="height: 200px; overflow-y: auto;">
+  <li class="d-flex" *ngFor="let expense of expenses">
+    {{ expense.date }} {{ expense.type }}: {{ expense.amount }}
+    <button style="border: none;
+    background: transparent;"  (click)="removeExpense(expense)">
+      <mat-icon >delete</mat-icon>
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+
+<div class="currency-converter">
+    <input type="number" [(ngModel)]="amount" min="0" (ngModelChange)="convertCurrency()">
+    <select [(ngModel)]="fromCurrency" (ngModelChange)="convertCurrency()">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+    </select>
+    <select [(ngModel)]="toCurrency" (ngModelChange)="convertCurrency()">
+        <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+    </select>
+    <!-- <button (click)="convertCurrency()">Converti</button> -->
+    <p>Importo Convertito: {{ convertedAmount }}</p>
+</div> 
+ 
+  
+  
+  

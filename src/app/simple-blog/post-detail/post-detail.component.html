@@ -1,0 +1,8 @@
+<div *ngIf="post" class="post-detail container-fluid m-2">
+    <h2>{{ post.title }}</h2>
+    <img class="w-75" [src]="post.image" alt="{{ post.title }}">
+    <p>{{ post.content }}</p>
+    <span>Scritto da: {{ post.author }}</span>
+    <span>Data: {{ post.date | date:'longDate' }}</span>
+  </div>
+  

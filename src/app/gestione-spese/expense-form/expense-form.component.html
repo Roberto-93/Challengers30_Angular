@@ -1,0 +1,29 @@
+<h2>Aggiungi Spesa</h2>
+<form class="h-75 d-flex flex-column justify-content-between" [formGroup]="expenseForm" (ngSubmit)="onSubmit()">
+ 
+<div>
+  <div class="m-2">
+    <label for="amount">Importo:</label>
+    <input type="number" id="amount" formControlName="amount">
+  </div>
+
+  <div class="m-2">
+    <label for="date">Data:</label>
+    <input type="date" id="date" formControlName="date">
+  </div>
+
+  <div class="m-2">
+    <label for="type">Tipo:</label>
+
+    <select formControlName="type">
+      <option value="Entrate">Entrate</option>
+      <option value="Uscite">Uscite</option>
+    </select>
+  </div>
+</div>
+<div>
+    <button type="submit"> Aggiungi</button>
+
+</div>
+
+</form>

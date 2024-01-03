@@ -1,0 +1,27 @@
+<div class="create-post-container">
+    <h2>Crea un nuovo post</h2>
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="title">Titolo</label>
+        <input type="text" id="title" formControlName="title">
+      </div>
+      <div>
+        <label for="image">Immagine</label>
+        <input type="text" id="image" formControlName="imageUrl">
+      </div>
+      <div>
+        <label for="content">Contenuto</label>
+        <textarea id="content" formControlName="content"></textarea>
+      </div>
+      <div>
+        <label for="author">Autore</label>
+        <input type="text" id="author" formControlName="author">
+      </div>
+      <div>
+        <label for="date">Data</label>
+        <input type="date" id="date" formControlName="date">
+      </div>
+      <button type="submit" [disabled]="!postForm.valid">Crea Post</button>
+    </form>
+  </div>
+  

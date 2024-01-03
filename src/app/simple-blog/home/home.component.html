@@ -1,0 +1,17 @@
+<div class="home-container p-2">
+    <div class="col-8">
+        <h1>Benvenuto nel Blog</h1>
+          <!-- Pulsante per aprire la modale di creazione del post -->
+        <button (click)="openCreatePostDialog()">Crea un Nuovo Post</button>
+        
+           <!-- Dettagli del post selezionato -->
+        <app-post-detail   [post]="selectedPost"></app-post-detail>
+
+    </div>
+    <div class="col-2 p-2">
+    <!-- Lista dei post con evento di selezione -->
+        <app-post-list (selectPost)="onSelectPost($event)"></app-post-list>
+    </div>
+    
+   </div>
+  

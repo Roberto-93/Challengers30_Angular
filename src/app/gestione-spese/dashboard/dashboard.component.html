@@ -1,0 +1,23 @@
+<h2>Dashboard delle Spese</h2>
+<div>
+    <div class="d-flex h-100  justify-content-between">
+        <app-expense-form class="border p-3"/>
+        <app-expense-list class="border p-3" />
+    </div>
+</div>
+
+<div class="container fluid">
+
+    <ngx-charts-line-chart
+    [scheme]="colorScheme" 
+    [results]="data" 
+    [gradient]="true" 
+    [xAxis]="true" 
+    [yAxis]="true" 
+    [legend]="true" 
+    [showXAxisLabel]="true" 
+    [showYAxisLabel]="true" 
+    [xAxisLabel]="'Data'" 
+    [yAxisLabel]="'Importo Totale'"
+    />
+</div>

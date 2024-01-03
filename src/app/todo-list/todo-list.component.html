@@ -1,0 +1,39 @@
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col d-flex flex-column align-items-center">
+      <div class="d-flex align-items-center ">
+        <mat-form-field class="">
+          <mat-label>Aggiungi Attività</mat-label>
+          <input matInput #taskInput (keyup.enter)="addTask(taskInput)">
+        </mat-form-field>
+        <button class="transparent-button d-flex"  (click)="addTask(taskInput)">
+          <mat-icon>add</mat-icon> Aggiungi
+        </button>
+      </div>
+    
+      <ul class="list-group mt-3" cdkDropList (cdkDropListDropped)="drop($event)">
+        <li class="list-group-item d-flex justify-content-between align-items-center" 
+            *ngFor="let task of tasks; let i = index" cdkDrag         
+            [ngClass]="{'completed-task': task.completed}"
+            (dblclick)="editTask(i)">
+          <input type="checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(i)">
+          <div *ngIf="!task.editing" (dblclick)="editTask(i)">
+            <span [class.completed]="task.completed" class="d-flex flex-wrap p-1">{{ task.title }}</span>
+          </div>
+          <input *ngIf="task.editing" [value]="task.title" #taskInput
+                  (blur)="saveTask(i, taskInput)" (keyup.enter)="saveTask(i, taskInput)">
+          <div>
+            <button class="transparent-button" (click)="editTask(i)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button class="transparent-button" (click)="deleteTask(task.title)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
