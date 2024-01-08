@@ -1,0 +1,54 @@
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <div class="bg-dark text-white p-3 rounded">
+
+          <div id="display" class="text-end mb-3 p-2 bg-secondary rounded "> 
+            <div class="fs-6" style="height: 15px;">
+                {{ currentOperation }} 
+            </div>  
+            <div class="" style="height: 25px;">
+                {{ displayValue }}
+            </div>  
+        </div>
+          <div class="button-row d-flex flex-row justify-content-between mb-1">
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('%')">%</button>
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('CE')">CE</button>
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('C')">C</button>
+            <button class="btn btn-warning flex-grow-1" (click)="onButtonPress('⌫')">⌫</button>
+          </div>
+          <div class="button-row d-flex flex-row justify-content-between mb-1">
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('1/x')">1/x</button>
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('x²')">x²</button>
+            <button class="btn btn-secondary flex-grow-1 me-1" (click)="onButtonPress('√x')">√x</button>
+            <button class="btn btn-warning flex-grow-1" (click)="onButtonPress('÷')">÷</button>
+          </div>
+          <div class="button-row d-flex flex-row justify-content-between mb-1">
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('7')">7</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('8')">8</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('9')">9</button>
+            <button class="btn btn-warning flex-grow-1" (click)="onButtonPress('x')">x</button>
+          </div>
+          <div class="button-row d-flex flex-row justify-content-between mb-1">
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('4')">4</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('5')">5</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('6')">6</button>
+            <button class="btn btn-warning flex-grow-1" (click)="onButtonPress('-')">-</button>
+          </div>
+          <div class="button-row d-flex flex-row justify-content-between mb-1">
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('1')">1</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('2')">2</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('3')">3</button>
+            <button class="btn btn-warning flex-grow-1" (click)="onButtonPress('+')">+</button>
+          </div>
+          <div class="button-row d-flex flex-row justify-content-between">
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('±')">±</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('0')">0</button>
+            <button class="btn btn-light flex-grow-1 me-1" (click)="onButtonPress('.')">,</button>
+            <button class="btn btn-primary flex-grow-1" (click)="onButtonPress('=')">=</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

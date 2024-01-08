@@ -24,6 +24,7 @@ import { ChatComponent } from './chat/chat.component';
 import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SimpleBlogModule } from './simple-blog/simple-blog.module';
+import { CalculatorComponent } from './calculator/calculator.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { SimpleBlogModule } from './simple-blog/simple-blog.module';
     CurrencyConverterComponent,
     ChatComponent,
     QrCodeGeneratorComponent,
-    WeatherComponent
+    WeatherComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

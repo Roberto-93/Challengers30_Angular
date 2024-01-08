@@ -8,7 +8,7 @@ import { CurrencyConverterComponent } from './currency-converter/currency-conver
 import { ChatComponent } from './chat/chat.component';
 import { QrCodeGeneratorComponent } from './qr-code-generator/qr-code-generator.component';
 import { WeatherComponent } from './weather/weather.component';
-
+import { CalculatorComponent } from './calculator/calculator.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -21,6 +21,7 @@ const routes: Routes = [
  { path: 'meteo', component: WeatherComponent }, 
  { path: 'gestione-spese', loadChildren: () => import('./gestione-spese/gestione-spese.module').then(m => m.GestioneSpeseModule) },
  { path: 'simple-blog', loadChildren: () => import('./simple-blog/simple-blog.module').then(m => m.SimpleBlogModule) },
+ { path: 'calculator', component: CalculatorComponent }, 
 
 
  { path: '**', redirectTo: '/home' }
