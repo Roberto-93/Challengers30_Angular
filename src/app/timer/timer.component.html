@@ -1,5 +1,5 @@
 <div class="timer-container">
-    <h1>{{ time }}</h1>
+    <h1>{{ hours }}:{{ minutes }}:{{ seconds }}</h1>
     <button (click)="startTimer()" [disabled]="isRunning">Start</button>
     <button (click)="pauseTimer()" [disabled]="!isRunning">Pause</button>
     <button (click)="resetTimer()">Reset</button>

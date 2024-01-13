@@ -8,19 +8,34 @@ import { Subscription, interval } from 'rxjs';
 })
 export class TimerComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
-  time: number = 0;
+  hours: number = 0;
+  minutes: number = 0;
+  seconds: number = 0;
+
   isRunning: boolean = false;
 
   ngOnInit(): void {
   }
 
+
   startTimer() {
     if (!this.isRunning) {
       this.isRunning = true;
       const source = interval(1000);
-      this.subscription = source.subscribe(val => this.time++);
+      this.subscription = source.subscribe(() => {
+        this.seconds++;
+        if (this.seconds === 60) {
+          this.seconds = 0;
+          this.minutes++;
+          if (this.minutes === 60) {
+            this.minutes = 0;
+            this.hours++;
+          }
+        }
+      });
     }
   }
+  
 
   pauseTimer() {
     if (this.subscription) {
@@ -30,7 +45,9 @@ export class TimerComponent implements OnInit, OnDestroy {
   }
 
   resetTimer() {
-    this.time = 0;
+    this.hours = 0;
+    this.minutes = 0;
+    this.seconds = 0;
     this.pauseTimer();
   }
 
